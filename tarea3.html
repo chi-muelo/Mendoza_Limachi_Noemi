@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarea 3 - Componentes y Formularios</title>
+    <title>Tarea 3 - Compras Virtuales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -34,7 +34,7 @@
          ============================================= -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand fw-semibold" href="#">AdminPanel</a>
+            <a class="navbar-brand fw-semibold" href="#inicio">ShopPanel</a>
 
             <button class="navbar-toggler" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navPrincipal"
@@ -47,38 +47,38 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index1.html">Inicio</a>
+                        <a class="nav-link" href="#inicio">Inicio</a>
                     </li>
 
-                    <!-- Menú desplegable: Módulos -->
+                    <!-- Menú desplegable: Compras -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#"
                            role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">Módulos</a>
+                           aria-expanded="false">Compras</a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="index1.html#panel-pedidos">Pedidos</a></li>
-                            <li><a class="dropdown-item" href="index1.html#panel-inventario">Inventario</a></li>
-                            <li><a class="dropdown-item" href="index1.html#panel-finanzas">Finanzas</a></li>
+                            <li><a class="dropdown-item" href="#catalogo">Catalogo</a></li>
+                            <li><a class="dropdown-item" href="#carrito">Carrito</a></li>
+                            <li><a class="dropdown-item" href="#acciones-compra">Acciones</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="tarea2.html">Media Queries</a></li>
+                            <li><a class="dropdown-item" href="#registro">Registro</a></li>
                         </ul>
                     </li>
 
-                    <!-- Menú desplegable: Configuración -->
+                    <!-- Menú desplegable: Cuenta -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#"
                            role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">Configuración</a>
+                           aria-expanded="false">Cuenta</a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">Perfil</a></li>
-                            <li><a class="dropdown-item" href="#">Permisos</a></li>
+                            <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+                            <li><a class="dropdown-item" href="#">Direcciones</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item text-danger" href="#">Cerrar sesión</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="tarea3.html" aria-current="page">Tarea 3</a>
+                        <a class="nav-link active" href="#acciones-compra" aria-current="page">Tarea 3</a>
                     </li>
                 </ul>
 
@@ -99,17 +99,61 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
 
-                <div class="text-center mb-5">
-                    <h1 class="fw-bold">Componentes y Formularios</h1>
-                    <p class="text-secondary lead">Navbar con menú desplegable, formulario de registro con validación visual y botones de acción.</p>
+                <div id="inicio" class="text-center mb-5">
+                    <h1 class="fw-bold">Compras Virtuales</h1>
+                    <p class="text-secondary lead">Navegacion propia, registro de clientes y acciones de compra funcionales en una sola pagina.</p>
+                </div>
+
+                <div id="catalogo" class="card shadow-sm mb-4">
+                    <div class="card-header bg-dark text-white">
+                        <h2 class="h5 mb-0">Catalogo Rapido</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-4">
+                                <div class="border rounded p-3 h-100 bg-light">
+                                    <h3 class="h6">Audifonos Bluetooth</h3>
+                                    <p class="mb-2 text-secondary">Sonido estereo con bateria de larga duracion.</p>
+                                    <p class="fw-semibold mb-3">$40</p>
+                                    <button type="button" class="btn btn-sm btn-primary add-product" data-name="Audifonos Bluetooth" data-price="40">Agregar al carrito</button>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="border rounded p-3 h-100 bg-light">
+                                    <h3 class="h6">Teclado Mecanico</h3>
+                                    <p class="mb-2 text-secondary">Switches tactiles y luz LED configurable.</p>
+                                    <p class="fw-semibold mb-3">$55</p>
+                                    <button type="button" class="btn btn-sm btn-primary add-product" data-name="Teclado Mecanico" data-price="55">Agregar al carrito</button>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="border rounded p-3 h-100 bg-light">
+                                    <h3 class="h6">Mouse Gamer</h3>
+                                    <p class="mb-2 text-secondary">Sensor optico preciso y diseno ergonomico.</p>
+                                    <p class="fw-semibold mb-3">$30</p>
+                                    <button type="button" class="btn btn-sm btn-primary add-product" data-name="Mouse Gamer" data-price="30">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="carrito" class="card shadow-sm mb-5">
+                    <div class="card-header bg-success text-white">
+                        <h2 class="h5 mb-0">Resumen del Carrito</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-1">Productos agregados: <strong id="cart-count">0</strong></p>
+                        <p class="mb-0">Total actual: <strong id="cart-total">$0.00</strong></p>
+                    </div>
                 </div>
 
                 <!-- =============================================
                      FORMULARIO DE REGISTRO DE USUARIOS
                      ============================================= -->
-                <div class="card shadow-sm mb-5">
+                <div id="registro" class="card shadow-sm mb-5">
                     <div class="card-header bg-primary text-white">
-                        <h2 class="h5 mb-0">Registro de Usuario</h2>
+                        <h2 class="h5 mb-0">Registro de Cliente</h2>
                     </div>
                     <div class="card-body p-4">
                         <form id="formRegistro" novalidate>
@@ -152,17 +196,17 @@
                                 <div class="invalid-feedback">Formato incorrecto (solo dígitos, 7–10 caracteres).</div>
                             </div>
 
-                            <!-- Rol -->
+                            <!-- Tipo de cliente -->
                             <div class="mb-3">
-                                <label for="rol" class="form-label">Rol <span class="text-danger">*</span></label>
+                                <label for="rol" class="form-label">Tipo de cliente <span class="text-danger">*</span></label>
                                 <select class="form-select" id="rol" required>
-                                    <option value="">-- Selecciona un rol --</option>
-                                    <option value="admin">Administrador</option>
-                                    <option value="editor">Editor</option>
-                                    <option value="usuario">Usuario</option>
+                                    <option value="">-- Selecciona un tipo --</option>
+                                    <option value="frecuente">Frecuente</option>
+                                    <option value="mayorista">Mayorista</option>
+                                    <option value="nuevo">Nuevo cliente</option>
                                 </select>
-                                <div class="valid-feedback">Rol seleccionado.</div>
-                                <div class="invalid-feedback">Selecciona un rol para continuar.</div>
+                                <div class="valid-feedback">Tipo seleccionado.</div>
+                                <div class="invalid-feedback">Selecciona un tipo para continuar.</div>
                             </div>
 
                             <!-- Contraseña -->
@@ -209,69 +253,30 @@
                 </div>
 
                 <!-- =============================================
-                     BOTONES DE ACCIÓN CON DIFERENTES ESTADOS
+                     BOTONES DE ACCION FUNCIONALES
                      ============================================= -->
-                <div class="btn-estado-card mb-4">
-                    <h2 class="h5 mb-4">Botones de Acción — Diferentes Estados</h2>
+                <div id="acciones-compra" class="btn-estado-card mb-4">
+                    <h2 class="h5 mb-3">Botones de Accion de Compra</h2>
+                    <p class="text-secondary">Estos botones cambian estado y actualizan el carrito en tiempo real.</p>
 
-                    <!-- Variantes sólidas -->
-                    <p class="text-muted small text-uppercase fw-semibold mb-2">Variantes</p>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <button class="btn btn-primary">Primary</button>
-                        <button class="btn btn-secondary">Secondary</button>
-                        <button class="btn btn-success">Success</button>
-                        <button class="btn btn-danger">Danger</button>
-                        <button class="btn btn-warning">Warning</button>
-                        <button class="btn btn-info">Info</button>
-                        <button class="btn btn-light border">Light</button>
-                        <button class="btn btn-dark">Dark</button>
+                    <div id="action-status" class="alert alert-secondary" role="alert">
+                        Estado: listo para comprar.
                     </div>
 
-                    <!-- Estado deshabilitado -->
-                    <p class="text-muted small text-uppercase fw-semibold mb-2">Estado Deshabilitado</p>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <button class="btn btn-primary" disabled>Primary (disabled)</button>
-                        <button class="btn btn-success" disabled>Success (disabled)</button>
-                        <button class="btn btn-danger" disabled>Danger (disabled)</button>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <button id="btn-cupon" class="btn btn-outline-primary">Aplicar cupon 10%</button>
+                        <button id="btn-favorito" class="btn btn-outline-warning" aria-pressed="false">Marcar tienda favorita</button>
                     </div>
 
-                    <!-- Estado activo/presionado -->
-                    <p class="text-muted small text-uppercase fw-semibold mb-2">Estado Activo</p>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <button class="btn btn-primary active" aria-pressed="true">Primary (active)</button>
-                        <button class="btn btn-success active" aria-pressed="true">Success (active)</button>
-                        <button class="btn btn-outline-dark active" aria-pressed="true">Outline (active)</button>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <button id="btn-finalizar" class="btn btn-success">Finalizar compra</button>
+                        <button id="btn-pagar" class="btn btn-primary">Simular pago</button>
+                        <button id="btn-vaciar" class="btn btn-danger">Vaciar carrito</button>
                     </div>
 
-                    <!-- Estado cargando (loading) -->
-                    <p class="text-muted small text-uppercase fw-semibold mb-2">Estado Cargando</p>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <button class="btn btn-primary" disabled>
-                            <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
-                            Cargando…
-                        </button>
-                        <button class="btn btn-success" disabled>
-                            <span class="spinner-grow spinner-grow-sm me-1" role="status" aria-hidden="true"></span>
-                            Guardando…
-                        </button>
-                    </div>
-
-                    <!-- Tamaños -->
-                    <p class="text-muted small text-uppercase fw-semibold mb-2">Tamaños</p>
-                    <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
-                        <button class="btn btn-primary btn-lg">Grande</button>
-                        <button class="btn btn-primary">Normal</button>
-                        <button class="btn btn-primary btn-sm">Pequeño</button>
-                    </div>
-
-                    <!-- Outlines -->
-                    <p class="text-muted small text-uppercase fw-semibold mb-2">Outline</p>
                     <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-outline-primary">Outline Primary</button>
-                        <button class="btn btn-outline-success">Outline Success</button>
-                        <button class="btn btn-outline-danger">Outline Danger</button>
-                        <button class="btn btn-outline-warning">Outline Warning</button>
-                        <button class="btn btn-outline-dark">Outline Dark</button>
+                        <button class="btn btn-secondary" disabled>Estado deshabilitado</button>
+                        <button class="btn btn-info active" aria-pressed="true">Estado activo</button>
                     </div>
                 </div>
 
@@ -280,7 +285,7 @@
     </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-3">
-        <small>Laboratorio DPW2 — Tarea 3: Componentes y Formularios &mdash; 2026</small>
+        <small>Laboratorio DPW2 - Tarea 3: Compras Virtuales - 2026</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -293,6 +298,102 @@
         const passwordConfirm = document.getElementById('passwordConfirm');
         const strengthBar = document.getElementById('password-strength-bar');
         const strengthText = document.getElementById('password-strength-text');
+        const addButtons = document.querySelectorAll('.add-product');
+        const cartCountEl = document.getElementById('cart-count');
+        const cartTotalEl = document.getElementById('cart-total');
+        const actionStatus = document.getElementById('action-status');
+        const btnCupon = document.getElementById('btn-cupon');
+        const btnFavorito = document.getElementById('btn-favorito');
+        const btnFinalizar = document.getElementById('btn-finalizar');
+        const btnPagar = document.getElementById('btn-pagar');
+        const btnVaciar = document.getElementById('btn-vaciar');
+        let cartCount = 0;
+        let cartTotal = 0;
+        let cuponAplicado = false;
+
+        function actualizarCarrito() {
+            cartCountEl.textContent = String(cartCount);
+            cartTotalEl.textContent = `$${cartTotal.toFixed(2)}`;
+        }
+
+        function mostrarEstado(tipo, mensaje) {
+            actionStatus.className = `alert alert-${tipo}`;
+            actionStatus.textContent = mensaje;
+        }
+
+        addButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const precio = Number(button.dataset.price || 0);
+                const producto = button.dataset.name || 'Producto';
+                cartCount += 1;
+                cartTotal += precio;
+                actualizarCarrito();
+                mostrarEstado('primary', `${producto} agregado al carrito.`);
+            });
+        });
+
+        btnCupon.addEventListener('click', () => {
+            if (cuponAplicado) {
+                mostrarEstado('warning', 'El cupon ya fue aplicado una vez.');
+                return;
+            }
+            if (cartTotal <= 0) {
+                mostrarEstado('warning', 'Agrega productos antes de aplicar cupon.');
+                return;
+            }
+            cartTotal = cartTotal * 0.9;
+            cuponAplicado = true;
+            btnCupon.disabled = true;
+            actualizarCarrito();
+            mostrarEstado('success', 'Cupon aplicado: descuento del 10%.');
+        });
+
+        btnFavorito.addEventListener('click', () => {
+            const activo = btnFavorito.classList.toggle('active');
+            btnFavorito.setAttribute('aria-pressed', String(activo));
+            btnFavorito.textContent = activo ? 'Tienda favorita guardada' : 'Marcar tienda favorita';
+            mostrarEstado('info', activo ? 'Tienda marcada como favorita.' : 'Tienda removida de favoritos.');
+        });
+
+        btnFinalizar.addEventListener('click', () => {
+            if (cartCount === 0) {
+                mostrarEstado('danger', 'No puedes finalizar una compra sin productos.');
+                return;
+            }
+            mostrarEstado('success', `Compra preparada con ${cartCount} producto(s). Completa tu registro para continuar.`);
+            document.getElementById('registro').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        btnPagar.addEventListener('click', () => {
+            if (cartCount === 0) {
+                mostrarEstado('danger', 'No hay productos para procesar el pago.');
+                return;
+            }
+            const textoOriginal = btnPagar.innerHTML;
+            btnPagar.disabled = true;
+            btnPagar.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>Procesando...';
+            mostrarEstado('secondary', 'Procesando pago virtual...');
+
+            setTimeout(() => {
+                btnPagar.disabled = false;
+                btnPagar.innerHTML = textoOriginal;
+                mostrarEstado('success', `Pago exitoso por ${cartTotalEl.textContent}. Gracias por tu compra.`);
+                cartCount = 0;
+                cartTotal = 0;
+                cuponAplicado = false;
+                btnCupon.disabled = false;
+                actualizarCarrito();
+            }, 1500);
+        });
+
+        btnVaciar.addEventListener('click', () => {
+            cartCount = 0;
+            cartTotal = 0;
+            cuponAplicado = false;
+            btnCupon.disabled = false;
+            actualizarCarrito();
+            mostrarEstado('dark', 'Carrito vaciado correctamente.');
+        });
 
         // Validar al enviar
         form.addEventListener('submit', (e) => {
@@ -301,11 +402,12 @@
             form.classList.add('was-validated');
             if (form.checkValidity()) {
                 const btn = form.querySelector('[type="submit"]');
-                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Registrando…';
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Registrando...';
                 btn.disabled = true;
                 setTimeout(() => {
-                    btn.innerHTML = '✓ Registrado correctamente';
+                    btn.innerHTML = 'Registrado correctamente';
                     btn.classList.replace('btn-primary', 'btn-success');
+                    mostrarEstado('success', 'Registro completado. Ya puedes finalizar la compra.');
                 }, 1500);
             }
         });
@@ -319,6 +421,7 @@
             btn.innerHTML = 'Registrar Usuario';
             btn.disabled = false;
             btn.classList.replace('btn-success', 'btn-primary');
+            mostrarEstado('secondary', 'Formulario reiniciado.');
         });
 
         // Validar coincidencia de contraseñas en tiempo real
