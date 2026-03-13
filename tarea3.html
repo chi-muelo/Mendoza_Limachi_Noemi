@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 3 - Componentes y Formularios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { background-color: #f7f8fc; }
+
+        /* Barra de estado de contraseña */
+        #password-strength-bar {
+            height: 6px;
+            border-radius: 3px;
+            transition: width .4s, background-color .4s;
+            width: 0%;
+            background-color: #dc3545;
+        }
+
+        /* Tarjetas de estado de botones */
+        .btn-estado-card {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: .5rem;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =============================================
+         NAVBAR CON MENÚ DESPLEGABLE
+         ============================================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-semibold" href="#">AdminPanel</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navPrincipal"
+                    aria-controls="navPrincipal" aria-expanded="false"
+                    aria-label="Alternar menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index1.html">Inicio</a>
+                    </li>
+
+                    <!-- Menú desplegable: Módulos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                           role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Módulos</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="index1.html#panel-pedidos">Pedidos</a></li>
+                            <li><a class="dropdown-item" href="index1.html#panel-inventario">Inventario</a></li>
+                            <li><a class="dropdown-item" href="index1.html#panel-finanzas">Finanzas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="tarea2.html">Media Queries</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Menú desplegable: Configuración -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                           role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Configuración</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Perfil</a></li>
+                            <li><a class="dropdown-item" href="#">Permisos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="tarea3.html" aria-current="page">Tarea 3</a>
+                    </li>
+                </ul>
+
+                <!-- Búsqueda rápida -->
+                <form class="d-flex" role="search">
+                    <input class="form-control form-control-sm me-2" type="search"
+                           placeholder="Buscar..." aria-label="Buscar">
+                    <button class="btn btn-outline-light btn-sm" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =============================================
+         CONTENIDO PRINCIPAL
+         ============================================= -->
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+
+                <div class="text-center mb-5">
+                    <h1 class="fw-bold">Componentes y Formularios</h1>
+                    <p class="text-secondary lead">Navbar con menú desplegable, formulario de registro con validación visual y botones de acción.</p>
+                </div>
+
+                <!-- =============================================
+                     FORMULARIO DE REGISTRO DE USUARIOS
+                     ============================================= -->
+                <div class="card shadow-sm mb-5">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h5 mb-0">Registro de Usuario</h2>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="formRegistro" novalidate>
+
+                            <!-- Nombre y Apellido -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-12 col-sm-6">
+                                    <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="nombre"
+                                           placeholder="Ej: Ana" required minlength="2">
+                                    <div class="valid-feedback">¡Nombre válido!</div>
+                                    <div class="invalid-feedback">El nombre es obligatorio (mínimo 2 caracteres).</div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="apellido" class="form-label">Apellido <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="apellido"
+                                           placeholder="Ej: García" required minlength="2">
+                                    <div class="valid-feedback">¡Apellido válido!</div>
+                                    <div class="invalid-feedback">El apellido es obligatorio (mínimo 2 caracteres).</div>
+                                </div>
+                            </div>
+
+                            <!-- Correo -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email"
+                                       placeholder="usuario@ejemplo.com" required>
+                                <div class="valid-feedback">Correo válido.</div>
+                                <div class="invalid-feedback">Ingresa un correo electrónico válido.</div>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono"
+                                       placeholder="Ej: 72345678"
+                                       pattern="[0-9]{7,10}">
+                                <div class="form-text">Solo dígitos, entre 7 y 10 caracteres.</div>
+                                <div class="valid-feedback">Teléfono válido.</div>
+                                <div class="invalid-feedback">Formato incorrecto (solo dígitos, 7–10 caracteres).</div>
+                            </div>
+
+                            <!-- Rol -->
+                            <div class="mb-3">
+                                <label for="rol" class="form-label">Rol <span class="text-danger">*</span></label>
+                                <select class="form-select" id="rol" required>
+                                    <option value="">-- Selecciona un rol --</option>
+                                    <option value="admin">Administrador</option>
+                                    <option value="editor">Editor</option>
+                                    <option value="usuario">Usuario</option>
+                                </select>
+                                <div class="valid-feedback">Rol seleccionado.</div>
+                                <div class="invalid-feedback">Selecciona un rol para continuar.</div>
+                            </div>
+
+                            <!-- Contraseña -->
+                            <div class="mb-1">
+                                <label for="password" class="form-label">Contraseña <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" id="password"
+                                       placeholder="Mínimo 8 caracteres" required minlength="8">
+                                <div class="valid-feedback">Contraseña aceptada.</div>
+                                <div class="invalid-feedback">La contraseña debe tener al menos 8 caracteres.</div>
+                            </div>
+                            <!-- Barra de fortaleza de contraseña -->
+                            <div class="progress mb-3" style="height:6px;">
+                                <div id="password-strength-bar" class="progress-bar" role="progressbar"></div>
+                            </div>
+                            <div id="password-strength-text" class="form-text mb-3"></div>
+
+                            <!-- Confirmar contraseña -->
+                            <div class="mb-3">
+                                <label for="passwordConfirm" class="form-label">Confirmar contraseña <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" id="passwordConfirm"
+                                       placeholder="Repite la contraseña" required>
+                                <div class="valid-feedback">Las contraseñas coinciden.</div>
+                                <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                            </div>
+
+                            <!-- Términos y condiciones -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="terminos" required>
+                                <label class="form-check-label" for="terminos">
+                                    Acepto los <a href="#">términos y condiciones</a>
+                                </label>
+                                <div class="valid-feedback">Aceptado.</div>
+                                <div class="invalid-feedback">Debes aceptar los términos para continuar.</div>
+                            </div>
+
+                            <!-- Botones del formulario -->
+                            <div class="d-flex gap-2 flex-wrap">
+                                <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+                                <button type="reset" class="btn btn-outline-secondary">Limpiar Formulario</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <!-- =============================================
+                     BOTONES DE ACCIÓN CON DIFERENTES ESTADOS
+                     ============================================= -->
+                <div class="btn-estado-card mb-4">
+                    <h2 class="h5 mb-4">Botones de Acción — Diferentes Estados</h2>
+
+                    <!-- Variantes sólidas -->
+                    <p class="text-muted small text-uppercase fw-semibold mb-2">Variantes</p>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-secondary">Secondary</button>
+                        <button class="btn btn-success">Success</button>
+                        <button class="btn btn-danger">Danger</button>
+                        <button class="btn btn-warning">Warning</button>
+                        <button class="btn btn-info">Info</button>
+                        <button class="btn btn-light border">Light</button>
+                        <button class="btn btn-dark">Dark</button>
+                    </div>
+
+                    <!-- Estado deshabilitado -->
+                    <p class="text-muted small text-uppercase fw-semibold mb-2">Estado Deshabilitado</p>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <button class="btn btn-primary" disabled>Primary (disabled)</button>
+                        <button class="btn btn-success" disabled>Success (disabled)</button>
+                        <button class="btn btn-danger" disabled>Danger (disabled)</button>
+                    </div>
+
+                    <!-- Estado activo/presionado -->
+                    <p class="text-muted small text-uppercase fw-semibold mb-2">Estado Activo</p>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <button class="btn btn-primary active" aria-pressed="true">Primary (active)</button>
+                        <button class="btn btn-success active" aria-pressed="true">Success (active)</button>
+                        <button class="btn btn-outline-dark active" aria-pressed="true">Outline (active)</button>
+                    </div>
+
+                    <!-- Estado cargando (loading) -->
+                    <p class="text-muted small text-uppercase fw-semibold mb-2">Estado Cargando</p>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <button class="btn btn-primary" disabled>
+                            <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+                            Cargando…
+                        </button>
+                        <button class="btn btn-success" disabled>
+                            <span class="spinner-grow spinner-grow-sm me-1" role="status" aria-hidden="true"></span>
+                            Guardando…
+                        </button>
+                    </div>
+
+                    <!-- Tamaños -->
+                    <p class="text-muted small text-uppercase fw-semibold mb-2">Tamaños</p>
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                        <button class="btn btn-primary btn-lg">Grande</button>
+                        <button class="btn btn-primary">Normal</button>
+                        <button class="btn btn-primary btn-sm">Pequeño</button>
+                    </div>
+
+                    <!-- Outlines -->
+                    <p class="text-muted small text-uppercase fw-semibold mb-2">Outline</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-outline-primary">Outline Primary</button>
+                        <button class="btn btn-outline-success">Outline Success</button>
+                        <button class="btn btn-outline-danger">Outline Danger</button>
+                        <button class="btn btn-outline-warning">Outline Warning</button>
+                        <button class="btn btn-outline-dark">Outline Dark</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-3">
+        <small>Laboratorio DPW2 — Tarea 3: Componentes y Formularios &mdash; 2026</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        /* -----------------------------------------------
+           Validación visual del formulario
+           ----------------------------------------------- */
+        const form = document.getElementById('formRegistro');
+        const passwordInput = document.getElementById('password');
+        const passwordConfirm = document.getElementById('passwordConfirm');
+        const strengthBar = document.getElementById('password-strength-bar');
+        const strengthText = document.getElementById('password-strength-text');
+
+        // Validar al enviar
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            validarConfirmacion();
+            form.classList.add('was-validated');
+            if (form.checkValidity()) {
+                const btn = form.querySelector('[type="submit"]');
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Registrando…';
+                btn.disabled = true;
+                setTimeout(() => {
+                    btn.innerHTML = '✓ Registrado correctamente';
+                    btn.classList.replace('btn-primary', 'btn-success');
+                }, 1500);
+            }
+        });
+
+        // Limpiar estado al resetear
+        form.addEventListener('reset', () => {
+            form.classList.remove('was-validated');
+            strengthBar.style.width = '0%';
+            strengthText.textContent = '';
+            const btn = form.querySelector('[type="submit"]');
+            btn.innerHTML = 'Registrar Usuario';
+            btn.disabled = false;
+            btn.classList.replace('btn-success', 'btn-primary');
+        });
+
+        // Validar coincidencia de contraseñas en tiempo real
+        function validarConfirmacion() {
+            if (passwordInput.value !== passwordConfirm.value) {
+                passwordConfirm.setCustomValidity('Las contraseñas no coinciden.');
+            } else {
+                passwordConfirm.setCustomValidity('');
+            }
+        }
+        passwordConfirm.addEventListener('input', validarConfirmacion);
+
+        // Barra de fortaleza de contraseña
+        passwordInput.addEventListener('input', () => {
+            const val = passwordInput.value;
+            let puntos = 0;
+            if (val.length >= 8)              puntos++;
+            if (/[A-Z]/.test(val))            puntos++;
+            if (/[0-9]/.test(val))            puntos++;
+            if (/[^A-Za-z0-9]/.test(val))     puntos++;
+
+            const map = {
+                0: { w: '0%',   color: '#dc3545', txt: '' },
+                1: { w: '25%',  color: '#dc3545', txt: 'Débil' },
+                2: { w: '50%',  color: '#fd7e14', txt: 'Regular' },
+                3: { w: '75%',  color: '#0d6efd', txt: 'Buena' },
+                4: { w: '100%', color: '#198754', txt: 'Muy fuerte' },
+            };
+            const m = map[puntos];
+            strengthBar.style.width = m.w;
+            strengthBar.style.backgroundColor = m.color;
+            strengthText.textContent = val.length ? `Fortaleza: ${m.txt}` : '';
+        });
+    </script>
+</body>
+</html>

@@ -1,1 +1,225 @@
 /* Estilos personalizados para el Laboratorio DPW2 */
+
+/* =============================================
+   BASE (Mobile First — menos de 576 px)
+   - Sidebar oculto
+   - Fuente base pequeña
+   - Fondo azul pastel
+   ============================================= */
+body {
+    font-size: 14px;
+    background-color: #e8f0fe;
+    color: #212529;
+}
+
+/* SIDEBAR */
+#sidebar {
+    display: none;          /* oculto en móvil */
+}
+
+.sidebar-wrapper {
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    min-height: calc(100vh - 56px);
+}
+
+.sidebar-box {
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-title {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+
+.sidebar-link {
+    color: #495057;
+    border-radius: .375rem;
+    padding: .4rem .75rem;
+    font-size: .9rem;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* ENCABEZADO PRINCIPAL */
+.main-header {
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: .75rem;
+}
+
+.main-title {
+    font-size: 1.2rem;      /* tamaño móvil */
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+.main-subtitle {
+    font-size: .85rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* SECCIONES */
+.seccion {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .5rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.seccion-titulo {
+    font-size: 1.2rem;      /* actualizado por breakpoint */
+    font-weight: 600;
+    border-left: 4px solid #0d6efd;
+    padding-left: .6rem;
+    margin-bottom: .75rem;
+}
+
+/* TARJETAS DE BREAKPOINTS */
+.bp-card {
+    border-radius: .5rem;
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,.1);
+    height: 100%;
+}
+
+.bp-label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: .4rem;
+    font-size: .95rem;
+}
+
+.bp-desc {
+    font-size: .85rem;
+    margin: 0;
+}
+
+.bp-movil  { background: #cfe2ff; }
+.bp-tablet { background: #d1e7dd; }
+.bp-desktop { background: #fff3cd; }
+
+/* CAJA COLOR ADAPTATIVA */
+.caja-color {
+    background-color: #cfe2ff; /* color móvil */
+    border-radius: .5rem;
+    padding: 1.25rem;
+    font-weight: 500;
+    transition: background-color .3s;
+}
+
+/* COLUMNAS REJILLA */
+.col-card {
+    border-radius: .5rem;
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,.1);
+    height: 100%;
+}
+
+.col-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+}
+
+/* LISTA */
+.lista-responsive li {
+    margin-bottom: .35rem;
+}
+
+.texto-demo {
+    background: #f1f3f5;
+    border-radius: .375rem;
+    padding: .75rem 1rem;
+    margin-top: .75rem;
+    margin-bottom: 0;
+}
+
+/* =============================================
+   BREAKPOINT 1 — Tablet (>= 576 px)
+   - Fuente base 15 px
+   - Títulos más grandes
+   - Fondo verde pastel
+   ============================================= */
+@media (min-width: 576px) {
+    body {
+        font-size: 15px;
+        background-color: #d1e7dd;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .seccion-titulo {
+        font-size: 1.5rem;
+    }
+
+    .caja-color {
+        background-color: #d1e7dd;
+    }
+}
+
+/* =============================================
+   BREAKPOINT 2 — Tablet grande (>= 768 px)
+   - Fuente base 15.5 px
+   - Ajuste de padding en secciones
+   ============================================= */
+@media (min-width: 768px) {
+    body {
+        font-size: 15.5px;
+    }
+
+    .seccion {
+        padding: 1.75rem;
+    }
+
+    .main-title {
+        font-size: 1.65rem;
+    }
+}
+
+/* =============================================
+   BREAKPOINT 3 — Escritorio (>= 992 px)
+   - Sidebar visible
+   - Fuente base 16 px
+   - Fondo amarillo pastel
+   ============================================= */
+@media (min-width: 992px) {
+    body {
+        font-size: 16px;
+        background-color: #f7f8fc;
+    }
+
+    #sidebar {
+        display: block;     /* sidebar visible en escritorio */
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+        color: #0a3d62;
+    }
+
+    .seccion-titulo {
+        font-size: 1.4rem;
+    }
+
+    .caja-color {
+        background-color: #fff3cd;
+    }
+
+    .texto-demo {
+        font-size: 1rem;
+    }
+}
+

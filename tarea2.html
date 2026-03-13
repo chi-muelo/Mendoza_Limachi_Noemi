@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 2 - Media Queries</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AdminPanel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu" aria-controls="navbarMenu"
+                aria-expanded="false" aria-label="Alternar menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index1.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tarea2.html" aria-current="page">Tarea 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- SIDEBAR -->
+            <aside id="sidebar" class="col-lg-3 col-xl-2 sidebar-wrapper">
+                <div class="sidebar-box px-3 py-4">
+                    <h2 class="sidebar-title">Navegacion</h2>
+                    <nav class="nav flex-column gap-1">
+                        <a class="nav-link sidebar-link active" href="#seccion-breakpoints">Breakpoints</a>
+                        <a class="nav-link sidebar-link" href="#seccion-tipografia">Tipografia</a>
+                        <a class="nav-link sidebar-link" href="#seccion-colores">Colores</a>
+                        <a class="nav-link sidebar-link" href="#seccion-rejilla">Rejilla</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <main class="col-lg-9 col-xl-10 py-4">
+
+                <div class="main-header mb-4">
+                    <h1 class="main-title">Media Queries y Personalizacion</h1>
+                    <p class="main-subtitle">Demostracion de breakpoints, tipografia responsiva y colores adaptativos.</p>
+                </div>
+
+                <!-- SECCION BREAKPOINTS -->
+                <section id="seccion-breakpoints" class="seccion">
+                    <h2 class="seccion-titulo">Breakpoints aplicados</h2>
+                    <p class="mb-3">Este sitio aplica <strong>3 puntos de ruptura</strong> definidos en <code>css/style.css</code>.
+                        Cambia el ancho de la ventana para ver los efectos.</p>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-4">
+                            <div class="bp-card bp-movil">
+                                <span class="bp-label">Movil</span>
+                                <p class="bp-desc">Menos de 576 px. Sidebar oculto, fuente pequeña, fondo azul pastel.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="bp-card bp-tablet">
+                                <span class="bp-label">Tablet</span>
+                                <p class="bp-desc">576 px - 991 px. Sidebar oculto, fuente mediana, fondo verde pastel.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="bp-card bp-desktop">
+                                <span class="bp-label">Escritorio</span>
+                                <p class="bp-desc">992 px en adelante. Sidebar visible, fuente grande, fondo amarillo pastel.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCION TIPOGRAFIA -->
+                <section id="seccion-tipografia" class="seccion">
+                    <h2 class="seccion-titulo">Tipografia Responsiva</h2>
+                    <p class="mb-3">El tamaño de fuente cambia segun el dispositivo:</p>
+                    <ul class="lista-responsive">
+                        <li><strong>Movil (&lt; 576 px):</strong> fuente base de <code>14px</code>, titulos en <code>1.2rem</code>.</li>
+                        <li><strong>Tablet (576 - 991 px):</strong> fuente base de <code>15px</code>, titulos en <code>1.5rem</code>.</li>
+                        <li><strong>Escritorio (&ge; 992 px):</strong> fuente base de <code>16px</code>, titulos en <code>1.8rem</code>.</li>
+                    </ul>
+                    <p class="texto-demo">Este parrafo aplica el tamaño de fuente del breakpoint activo.</p>
+                </section>
+
+                <!-- SECCION COLORES -->
+                <section id="seccion-colores" class="seccion">
+                    <h2 class="seccion-titulo">Colores Adaptativos</h2>
+                    <p class="mb-3">El color de fondo y de acento cambia segun el ancho de pantalla.</p>
+                    <div class="caja-color">
+                        <p class="mb-0">Esta caja refleja el color del breakpoint activo.</p>
+                    </div>
+                </section>
+
+                <!-- SECCION REJILLA -->
+                <section id="seccion-rejilla" class="seccion">
+                    <h2 class="seccion-titulo">Rejilla Bootstrap</h2>
+                    <p class="mb-3">Tres columnas que se apilan en movil y se distribuyen en pantallas grandes.</p>
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="col-card" style="background:#cfe2ff">
+                                <h3 class="col-card-title">Columna 1</h3>
+                                <p class="mb-0">Ocupa 12 cols en movil, 6 en tablet y 4 en escritorio.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="col-card" style="background:#d1e7dd">
+                                <h3 class="col-card-title">Columna 2</h3>
+                                <p class="mb-0">Ocupa 12 cols en movil, 6 en tablet y 4 en escritorio.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-4">
+                            <div class="col-card" style="background:#fff3cd">
+                                <h3 class="col-card-title">Columna 3</h3>
+                                <p class="mb-0">Ocupa 12 cols en movil, 12 en tablet y 4 en escritorio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
